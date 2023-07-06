@@ -30,13 +30,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Impulse Coeficient")
 	TSubclassOf<class ABall> BallClass;
 
-	// Ask server to begin spawn ball
+	// Call spawn ball on server
 	UFUNCTION(Server, Reliable)
 	void Server_SpawnBall();
-
-	// Spawn ball
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_SpawnBall();
 
 private:
 	// Message player pawns to update score in HUD
@@ -57,4 +53,8 @@ private:
 
 	// Timer handle to check if can start game
 	FTimerHandle StartGameTimerHandle;
+
+	// Spawn ball
+	UFUNCTION(NetMulticast, Reliable)
+	void Multicast_SpawnBall();
 };

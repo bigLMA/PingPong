@@ -69,7 +69,7 @@ void APingPongPlayer::MovePlatformForward(float Value)
 	Server_MovePlatformForward(Value);
 }
 
-// Ask server to update Score
+// Call update score on server
 void APingPongPlayer::Server_UpdateScore_Implementation(int32 NewScore, bool bIsFirstPlayer)
 {
 	if (HasAuthority())
@@ -87,7 +87,7 @@ void APingPongPlayer::Multicast_UpdateScore_Implementation(int32 NewScore, bool 
 	}
 }
 
-// Ask server to move plane right
+// Call move right on server
 void APingPongPlayer::Server_MovePlatformRight_Implementation(float Value)
 {
 	if (HasAuthority())
@@ -99,7 +99,7 @@ void APingPongPlayer::Server_MovePlatformRight_Implementation(float Value)
 	}
 }
 
-// Ask server to move plane forward
+// Call move forward on server
 void APingPongPlayer::Server_MovePlatformForward_Implementation(float Value)
 {
 	if (HasAuthority())

@@ -98,7 +98,7 @@ void APingPongGameModeBase::UpdateScore(bool bIsFirstPlayer)
 	}
 }
 
-// Ask server to begin spawn ball
+// Call spawn ball on server
 void APingPongGameModeBase::Server_SpawnBall_Implementation()
 {
 	if (HasAuthority())

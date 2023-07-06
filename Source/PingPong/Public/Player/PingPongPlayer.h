@@ -21,7 +21,7 @@ public:
 	// Input function, message server that platform is moving forward
 	void MovePlatformForward(float Value);
 
-	// Ask server to update Score
+	// Call update score on server
 	UFUNCTION(Server, Reliable)
 	void Server_UpdateScore(int32 NewScore, bool bIsFirstPlayer);
 
@@ -62,11 +62,11 @@ protected:
 	TSubclassOf<class UPingPongHUD> HUDClass;
 
 private:
-	// Ask server to move plane right
+	// Call move right on server
 	UFUNCTION(Server, Reliable)
 	void Server_MovePlatformRight(float Value);
 
-	// Ask server to move plane forward
+	// Call move forward on server
 	UFUNCTION(Server, Reliable)
 	void Server_MovePlatformForward(float Value);
 
